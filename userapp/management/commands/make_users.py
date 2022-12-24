@@ -26,8 +26,10 @@ class Command(BaseCommand):
                 username=su_name,
                 password=su_passwd,
                 email=su_email,
+
                 first_name="su",
                 last_name="su",
+
             )
             print(f' ->> Superuser "{su_name}" created')
 
@@ -42,5 +44,6 @@ class Command(BaseCommand):
                     email=user["email"],
                     first_name=user["first_name"],
                     last_name=user["last_name"],
+
                 )
                 print(f" -> User \"{user['username']}\" created")
