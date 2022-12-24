@@ -2,7 +2,7 @@
 name = "gb_drf"
 version = "0.1.0"
 description = ""
-authors = ["DashViolin <mymail@srv.org>"]
+authors = [""]
 
 [tool.poetry.dependencies]
 python = "^3.10"
