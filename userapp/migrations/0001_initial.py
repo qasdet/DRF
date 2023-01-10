@@ -1,4 +1,3 @@
-
 import django.contrib.auth.validators
 from django.db import migrations, models
 
