@@ -39,3 +39,4 @@ class Command(BaseCommand):
             for user in test_users:
                 user_model.objects.create_user(**user)
                 print(f" -> User \"{user['username']}\" created")
+
