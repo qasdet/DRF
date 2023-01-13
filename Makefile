@@ -19,3 +19,4 @@ front:
 	cd ./frontend && npm start run
 
 reset: db-reset back
+
