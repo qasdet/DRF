@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 
-from userapp.models import CustomUser
+from .models import CustomUser
 
 # from rest_framework.serializers import HyperlinkedModelSerializer
 
