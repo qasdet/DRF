@@ -17,7 +17,7 @@ class ToDoAppBaseModel(models.Model):
     is_active = models.BooleanField(default=True, verbose_name=_("is_active"))
 
     def delete(self, *args):
-        self.is_active = True
+        self.is_active = False
         self.save()
 
     def restore(self, *args):
@@ -30,7 +30,7 @@ class ToDoAppBaseModel(models.Model):
 
 class Project(ToDoAppBaseModel):
     title = models.CharField(_("title"), max_length=150, blank=False)
-    repo = models.CharField(_("repo"), max_length=255, blank=False)
+    repo = models.CharField(_("repo"), max_length=255, null=True, default=None)
     users = models.ManyToManyField(get_user_model())
 
     def __str__(self) -> str:
@@ -43,7 +43,7 @@ class Project(ToDoAppBaseModel):
 
 
 class ToDo(ToDoAppBaseModel):
-    text = models.CharField(_("title"), max_length=1000, blank=False)
+    text = models.CharField(_("text"), max_length=1000, blank=False)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name=_("project"))
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_("author"))
     is_completed = models.BooleanField(default=False, verbose_name=_("is_completed"))
